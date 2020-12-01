@@ -3,6 +3,20 @@ body {
     margin-left: auto;
     width: 600px;
 }
+#eraser {
+    text-align: right;
+    margin-top: 3em;
+}
+#eraseButton {
+    font: sans-serif;
+    width: 5em;
+    height: 3em;
+    color: white;
+    background-color: #2a6592;
+    outline: none;
+    border-color: rgb(90, 90, 90);
+    opacity: 75%;
+}
 :root {
     --grid-cols: 1;
     --grid-rows: 1;
@@ -14,10 +28,13 @@ body {
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-cols), 1fr);
     margin-top: 2em;
+    margin-bottom: 2em;
+    width: 400px;
+    height: 400px;
+    position: absolute;
 }
   
 .gridItem {
-    padding: 1em;
-    border: 1px solid rgb(31, 30, 30);
+    border: 0.01px solid rgb(31, 30, 30);
     text-align: center;
 }
