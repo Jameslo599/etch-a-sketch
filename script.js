@@ -8,7 +8,7 @@ function makeRows(rows) {
     let cell = document.createElement("div");
     container.appendChild(cell).className = "gridItem";
   };
-  hoverColor();
+  toggleColor();
 };
 
 makeRows(16);
@@ -24,6 +24,11 @@ function hoverColor() {
         boxes.style.backgroundColor = "black"})
       });
 }
+function toggleColor() {
+  let boxes = document.querySelectorAll(".gridItem");
+  boxes.forEach(boxes => {
+  boxes.addEventListener("click", hoverColor);
+})}
 
 //Remove grid before reset
 function removeGrid() {

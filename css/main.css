@@ -3,9 +3,18 @@ body {
     margin-left: auto;
     width: 600px;
 }
+#titles {
+    text-align: center;
+    margin-right: 10em;
+    margin-bottom: -2em;
+}
+h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
 #eraser {
     text-align: right;
     margin-top: 3em;
+    margin-right: 10em;
 }
 #eraseButton {
     font: sans-serif;
@@ -29,8 +38,8 @@ body {
     grid-template-columns: repeat(var(--grid-cols), 1fr);
     margin-top: 2em;
     margin-bottom: 2em;
-    width: 400px;
-    height: 400px;
+    width: 450px;
+    height: 450px;
     position: absolute;
 }
   
