@@ -2,23 +2,21 @@ body {
     margin-right: auto;
     margin-left: auto;
     width: 600px;
-
 }
+:root {
+    --grid-cols: 1;
+    --grid-rows: 1;
+}
+  
 #container {
-    font-size: 1em;
+    display: grid;
+    grid-gap: 0em;
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+}
+  
+.grid-item {
+    padding: 1em;
+    border: 1px solid rgb(31, 30, 30);
     text-align: center;
-}
-#row {
-    font-size: 0;
-}
-
-#box {
-    background-color: white;
-    border: rgb(0, 0, 0);
-    border-style: solid;
-    display: inline-block;
-    font-size: 1rem;
-    border-width: 0.01em;
-    height: 2em;
-    width: 2em;
 }
