@@ -46,4 +46,8 @@ h1 {
 .gridItem {
     border: 0.01px solid rgb(31, 30, 30);
     text-align: center;
+    background-color: white;
+}
+.gridItem:hover {
+    background-color: cyan;
 }
