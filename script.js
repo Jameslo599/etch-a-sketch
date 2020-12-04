@@ -15,21 +15,28 @@ function makeRows(rows) {
 
 makeRows(16);
 
-//Changes color of grid divs when mouse hovers over them
-function toggleBlack(e) {
-  e.target.style.backgroundColor = "black"
+//Changes color of grid and also activates pen upon click
+//function toggleBlack(e) {
+//  e.target.style.backgroundColor = "black"
+//}
+function toggleColor(e) {
+  let colors = document.getElementById("cell");
+  switch(colors) {
+    default:
+      e.target.style.backgroundColor = "black";
+  }
 }
 function togglePen() {
   if (!currentlyActive) {
     let boxes = document.querySelectorAll(".gridItem");
     boxes.forEach(boxes => {
-      boxes.addEventListener("mouseleave", toggleBlack);
+      boxes.addEventListener("mouseleave", toggleColor);
     });
     return currentlyActive = true;
   } else {
     let boxes = document.querySelectorAll(".gridItem");
     boxes.forEach(boxes => {
-      boxes.removeEventListener("mouseleave", toggleBlack);
+      boxes.removeEventListener("mouseleave", toggleColor);
       }); 
       return currentlyActive = false;
     };
