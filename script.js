@@ -22,10 +22,18 @@ makeRows(16);
 function toggleColor(e) {
   let colors = document.getElementById("cell");
   switch(colors) {
+    case "random":
+      let randomColor = Math.floor(Math.random()*16777215).toString(16);
+      e.target.style.backgroundColor = "#" + randomColor;
     default:
-      e.target.style.backgroundColor = "black";
+      //e.target.style.backgroundColor = "black";
+      colors.classList.add("lightness");
+        function incrementallyDarken() {
+          
+        }
+      }
   }
-}
+
 function togglePen() {
   if (!currentlyActive) {
     let boxes = document.querySelectorAll(".gridItem");

@@ -51,3 +51,6 @@ h1 {
 .gridItem:hover {
     background-color: cyan;
 }
+.lightness {
+    background-color: hsl(0, 0%, 100%)
+}
