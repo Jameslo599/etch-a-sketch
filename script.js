@@ -1,7 +1,6 @@
 //Generates a 16x16 grid upon loading of webpage
 const container = document.getElementById("container");
 let currentlyActive = false;
-let brightness = 90
 
 function makeRows(rows) {
   container.style.setProperty('--grid-rows', rows);
@@ -17,23 +16,21 @@ function makeRows(rows) {
 makeRows(16);
 
 //Changes color of grid and also activates pen upon click
-//function toggleBlack(e) {
-//  e.target.style.backgroundColor = "black"
-//}
 function toggleColor(e) {
   let colors = document.getElementById("cell");
   switch(colors) {
     case "random":
       let randomColor = Math.floor(Math.random()*16777215).toString(16);
       e.target.style.backgroundColor = "#" + randomColor;
+      break;
+    case "gray":
+      let opacity = Number(e.target.style.backgroundColor.slice(-4, -1));
+      e.target.style.backgroundColor = `rgba(0, 0, 0, ${opacity + 0.1})`;
+      if (opacity <= 1) { 
+      e.target.style.backgroundColor = `rgba(0, 0, 0, ${opacity + 0.1})`;
+    }
     default:
-      //e.target.style.backgroundColor = "black";
-      e.target.style.backgroundColor = `hsl(0, 0%, ${brightness}%)`;
-      e.target.addEventListener("click", () => {
-        brightness - 10;
-        e.target.style.backGroundColor = `hsl(0, 0%, ${brightness}%)`;
-      });
-          
+      e.target.style.backgroundColor = "black";  
   }
 }
 
@@ -53,9 +50,10 @@ function togglePen() {
     };
 };
 // Adjusts lightness of colors
-function modifyBrightness(val) {
-  brightness += val;
-  e.target.style.backGroundColor = 'hsl(0, 0%, ${brightness}%)';
+function modifyBrightness(e) {
+  if (brightness >= 0) {
+     e.target.style.backgroundColor = `hsl(0, 0%, ${brightness - 10})`;
+  } 
 }
 //Remove grid before reset
 function removeGrid() {
@@ -76,3 +74,4 @@ function eraseGrid() {
 }
 clearButton = document.getElementById("eraseButton");
 clearButton.addEventListener("click", eraseGrid);
+

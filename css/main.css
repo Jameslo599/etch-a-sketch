@@ -42,7 +42,6 @@ h1 {
     height: 450px;
     position: absolute;
 }
-  
 .gridItem {
     border: 0.01px solid rgb(31, 30, 30);
     text-align: center;
@@ -50,7 +49,4 @@ h1 {
 }
 .gridItem:hover {
     background-color: cyan;
-}
-.lightness {
-    background-color: hsl(0, 0%, 100%)
 }
