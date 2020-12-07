@@ -1,6 +1,7 @@
 //Generates a 16x16 grid upon loading of webpage
 const container = document.getElementById("container");
 let currentlyActive = false;
+let brightness = 90
 
 function makeRows(rows) {
   container.style.setProperty('--grid-rows', rows);
@@ -27,12 +28,14 @@ function toggleColor(e) {
       e.target.style.backgroundColor = "#" + randomColor;
     default:
       //e.target.style.backgroundColor = "black";
-      colors.classList.add("lightness");
-        function incrementallyDarken() {
+      e.target.style.backgroundColor = `hsl(0, 0%, ${brightness}%)`;
+      e.target.addEventListener("click", () => {
+        brightness - 10;
+        e.target.style.backGroundColor = `hsl(0, 0%, ${brightness}%)`;
+      });
           
-        }
-      }
   }
+}
 
 function togglePen() {
   if (!currentlyActive) {
@@ -49,7 +52,11 @@ function togglePen() {
       return currentlyActive = false;
     };
 };
-
+// Adjusts lightness of colors
+function modifyBrightness(val) {
+  brightness += val;
+  e.target.style.backGroundColor = 'hsl(0, 0%, ${brightness}%)';
+}
 //Remove grid before reset
 function removeGrid() {
   let cell = document.querySelectorAll(".gridItem");
