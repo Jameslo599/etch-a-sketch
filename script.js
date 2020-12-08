@@ -28,6 +28,11 @@ rainbow.addEventListener("click", () => {
 //Button to make color incrementally darker
 let gray = document.getElementById("darkenButton");
 gray.addEventListener("click", () => {
+    let boxes = document.querySelectorAll(".gridItem");
+    boxes.forEach(boxes => {
+      let opacity = -0.09;
+      boxes.style.backgroundColor = `rgba(0, 0, 0, ${opacity + 0.1})`;
+    });
   colorButton = "gray";
 })
 //Changes color of grid
