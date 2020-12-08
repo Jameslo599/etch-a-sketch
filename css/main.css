@@ -11,10 +11,52 @@ body {
 h1 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
-#eraser {
-    text-align: right;
-    margin-top: 3em;
-    margin-right: 10em;
+#buttonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 4em;
+    margin-right: 9em;
+}
+#blackButton {
+    font: sans-serif;
+    width: 5em;
+    height: 3em;
+    color: white;
+    background-color: #2a6592;
+    outline: none;
+    border-color: rgb(90, 90, 90);
+    opacity: 75%;
+}
+#randomButton {
+    font: sans-serif;
+    width: 5em;
+    height: 3em;
+    color: white;
+    background-color: #2a6592;
+    outline: none;
+    border-color: rgb(90, 90, 90);
+    opacity: 75%;
+}
+#darkenButton {
+    font: sans-serif;
+    width: 5em;
+    height: 3em;
+    color: white;
+    background-color: #2a6592;
+    outline: none;
+    border-color: rgb(90, 90, 90);
+    opacity: 75%;
+}
+#customButton {
+    font: sans-serif;
+    width: 5em;
+    height: 3em;
+    color: white;
+    background-color: #2a6592;
+    outline: none;
+    border-color: rgb(90, 90, 90);
+    opacity: 75%;
 }
 #eraseButton {
     font: sans-serif;

@@ -1,6 +1,7 @@
 //Generates a 16x16 grid upon loading of webpage
 const container = document.getElementById("container");
 let currentlyActive = false;
+let colorButton = document.getElementById("cell");
 
 function makeRows(rows) {
   container.style.setProperty('--grid-rows', rows);
@@ -14,11 +15,25 @@ function makeRows(rows) {
 };
 
 makeRows(16);
-
-//Changes color of grid and also activates pen upon click
+//Button to make color black
+let black = document.getElementById("blackButton");
+black.addEventListener("click", () => {
+  colorButton = "default";
+});
+//Button to make color random
+let rainbow = document.getElementById("randomButton");
+rainbow.addEventListener("click", () => {
+  colorButton = "random";
+});
+//Button to make color incrementally darker
+let gray = document.getElementById("darkenButton");
+gray.addEventListener("click", () => {
+  colorButton = "gray";
+})
+//Changes color of grid
 function toggleColor(e) {
-  let colors = document.getElementById("cell");
-  switch(colors) {
+  let colorTheme = colorButton;
+  switch(colorTheme) {
     case "random":
       let randomColor = Math.floor(Math.random()*16777215).toString(16);
       e.target.style.backgroundColor = "#" + randomColor;
@@ -28,12 +43,14 @@ function toggleColor(e) {
       e.target.style.backgroundColor = `rgba(0, 0, 0, ${opacity + 0.1})`;
       if (opacity <= 1) { 
       e.target.style.backgroundColor = `rgba(0, 0, 0, ${opacity + 0.1})`;
+      break;
     }
     default:
       e.target.style.backgroundColor = "black";  
   }
 }
 
+//Toggles on/off pen
 function togglePen() {
   if (!currentlyActive) {
     let boxes = document.querySelectorAll(".gridItem");
@@ -47,13 +64,7 @@ function togglePen() {
       boxes.removeEventListener("mouseleave", toggleColor);
       }); 
       return currentlyActive = false;
-    };
-};
-// Adjusts lightness of colors
-function modifyBrightness(e) {
-  if (brightness >= 0) {
-     e.target.style.backgroundColor = `hsl(0, 0%, ${brightness - 10})`;
-  } 
+    }
 }
 //Remove grid before reset
 function removeGrid() {
@@ -71,7 +82,6 @@ function eraseGrid() {
   removeGrid();
   let rows = prompt("Enter number of squares per side",);
   return makeRows(rows);
-}
+  }
 clearButton = document.getElementById("eraseButton");
 clearButton.addEventListener("click", eraseGrid);
-
