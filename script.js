@@ -67,7 +67,6 @@ function toggleColor(e) {
       e.target.style.backgroundColor = "black";  
   }
 }
-
 //Toggles on/off pen
 function togglePen() {
   if (!currentlyActive) {
@@ -97,9 +96,29 @@ function eraseGrid() {
   boxes.forEach(boxes => {
     boxes.style.backgroundColor = "white";
   })
-  removeGrid();
-  let rows = prompt("Enter number of squares per side",);
-  return makeRows(rows);
   }
 clearButton = document.getElementById("eraseButton");
 clearButton.addEventListener("click", eraseGrid);
+//Creates slider for grid
+let slider = document.createElement("INPUT");
+let slidecontainer = document.getElementById("slidecontainer");
+let output = document.getElementById("number");
+slider.setAttribute("type", "range");
+slider.setAttribute("id", "slider");
+slider.setAttribute("min", "1");
+slider.setAttribute("max", "100");
+slider.setAttribute("value", "16")
+slidecontainer.appendChild(slider);
+output.innerHTML = slider.value;
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+function removeGrid() {
+  let cell = document.querySelectorAll(".gridItem");
+  cell.forEach(cell => {
+    container.removeChild(cell);
+  })
+  let rows = slider.value;
+  return makeRows(rows);
+}
+slider.addEventListener("click", removeGrid);
