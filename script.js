@@ -35,6 +35,15 @@ gray.addEventListener("click", () => {
     });
   colorButton = "gray";
 })
+//Button for user-selected color
+let colorWheel = document.createElement("INPUT");
+colorWheel.setAttribute("type", "color");
+colorWheel.setAttribute("id", "colorSelect")
+let customButton = document.getElementById("customButton");
+customButton.appendChild(colorWheel);
+colorWheel.addEventListener("click", () => {
+  colorButton = "custom";
+});
 //Changes color of grid
 function toggleColor(e) {
   let colorTheme = colorButton;
@@ -50,6 +59,10 @@ function toggleColor(e) {
       e.target.style.backgroundColor = `rgba(0, 0, 0, ${opacity + 0.1})`;
       break;
     }
+    case "custom":
+      let selection = document.getElementById("colorSelect").value;
+      e.target.style.backgroundColor = `${selection}`;
+      break;
     default:
       e.target.style.backgroundColor = "black";  
   }
