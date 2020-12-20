@@ -20,3 +20,5 @@ The problem I spent the most time figuring out was the darken function. I wanted
 I spent some time getting more familiar with various html inputs and figuring out which DOM events seemed to work best for different input types.
 
 I also spent time practicing new css techniques such as webkit transitions and transforming elements into different shapes to make my design look more appealing. 
+
+- James Lo
