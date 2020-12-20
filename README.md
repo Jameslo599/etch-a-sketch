@@ -21,4 +21,4 @@ I spent some time getting more familiar with various html inputs and figuring ou
 
 I also spent time practicing new css techniques such as webkit transitions and transforming elements into different shapes to make my design look more appealing. 
 
-- James Lo
+-- James Lo
