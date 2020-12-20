@@ -72,13 +72,13 @@ function togglePen() {
   if (!currentlyActive) {
     let boxes = document.querySelectorAll(".gridItem");
     boxes.forEach(boxes => {
-      boxes.addEventListener("mouseleave", toggleColor);
+      boxes.addEventListener("mouseenter", toggleColor);
     });
     return currentlyActive = true;
   } else {
     let boxes = document.querySelectorAll(".gridItem");
     boxes.forEach(boxes => {
-      boxes.removeEventListener("mouseleave", toggleColor);
+      boxes.removeEventListener("mouseenter", toggleColor);
       }); 
       return currentlyActive = false;
     }
@@ -99,6 +99,7 @@ function eraseGrid() {
   }
 clearButton = document.getElementById("eraseButton");
 clearButton.addEventListener("click", eraseGrid);
+
 //Creates slider for grid
 let slider = document.createElement("INPUT");
 let slidecontainer = document.getElementById("slidecontainer");
